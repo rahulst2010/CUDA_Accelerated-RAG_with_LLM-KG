@@ -262,7 +262,7 @@ def main():
     preprocessor = TextPreprocessor()
     
     # Data loading
-    df = pd.read_csv("Your_file.csv")
+    df = pd.read_csv("file.csv")
     sentences = [preprocessor.preprocess_text(t) for t in df['self_text']]
     
     # CUDA-accelerated relation extraction
@@ -272,11 +272,11 @@ def main():
     relation_extractor.build_knowledge_graph(responses)
     
     # CUDA-optimized RAG pipeline
-    rag_vectorizer = RAGVectorizer(relation_extractor.kg, "your_openai_key")
+    rag_vectorizer = RAGVectorizer(relation_extractor.kg, "openai_key")
     rag_vectorizer.generate_node2vec_embeddings()
     
     # Process queries with CUDA acceleration
-    queries = ["Your query list here"]
+    queries = ["query list"]
     answers = rag_vectorizer.generate_answers_with_kg_rag(queries, sentences)
     
     print(f"CUDA-accelerated Answers: {answers}")
