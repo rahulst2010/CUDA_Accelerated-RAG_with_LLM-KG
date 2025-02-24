@@ -1,5 +1,3 @@
-# PRAGyan_with_CUDA
-
 # CUDA-Optimized RAG with Knowledge Graphs ⚡
 
 **A high-performance Retrieval-Augmented Generation (RAG) system leveraging CUDA-accelerated workflows for knowledge graph operations**
